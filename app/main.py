@@ -5,10 +5,10 @@ class Animal:
     alive: list[Animal] = []
 
     def __init__(
-            self,
-            name: str,
-            health: int = 100,
-            hidden: bool = False
+        self,
+        name: str,
+        health: int = 100,
+        hidden: bool = False,
     ) -> None:
         self.name = name
         self.health = health
@@ -27,7 +27,10 @@ class Herbivore(Animal):
 
 
 class Carnivore(Animal):
-    def bite(self, target: Animal) -> None:
+    def bite(
+        self,
+        target: Animal,
+    ) -> None:
         if isinstance(target, Herbivore) and not target.hidden:
             target.health -= 50
             if target.health <= 0:
